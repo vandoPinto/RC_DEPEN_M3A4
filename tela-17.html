@@ -1,0 +1,97 @@
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+<div style="height: 72px; width: 100%; background-color: #004c72; ">
+    <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;"><img
+            style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 68.45px;"
+            src="recursos/imgs/SI_H1.png"><img style="height: 73.05px; width:108.45px; margin-left:170.85px;"
+            src="recursos/imgs/SI_H2.png"><img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;"
+            src="recursos/imgs/SI_H3.png">
+    </div>
+</div>
+<div class="coluna-esquerda largura-1_1" style="width: 100%; margin-top: 60px;">
+    <p style="text-align: center; margin-bottom: 60px;">Vejamos os tipos de diagnóstico que auxiliam para confirmação
+        dos casos suspeitos de hanseníase.
+    </p>
+    <p><strong style="color: #004D73;"> Clique</strong> nas sanfonas para conhecê-los.</p>
+    <img src="recursos/imgs/SI_17a.png"
+        style="margin-left: 130px; margin-top: -10px; width: 633.95px; height: 65px; cursor: pointer;"
+        class="btn animate__animated animate__backInRight" id="botao_1">
+    <img src="recursos/imgs/SI_17b.png"
+        style="margin-left: 130px; margin-top: 10px; width: 633.95px; height: 65px; cursor: pointer;"
+        class="btn animate__animated animate__backInLeft" id="botao_2">
+    <img src="recursos/imgs/SI_17c.png"
+        style="margin-left: 130px; margin-top: 10px; width: 633.95px; height: 65px; cursor: pointer;"
+        class="btn animate__animated animate__backInLeft" id="botao_3">
+
+    <div>
+        <div id="janela_1"
+            style="position: relative; width: 573px; height: 280px; background-color: rgba(0, 77, 115, 0.9); border-radius: 10px; flex-wrap: nowrap; margin-left: 175px; margin-top: -244px; cursor: pointer; display: none;">
+            <h1 style="padding: 10px 0px 0px 20px; color: #fac900;">Diagnóstico clínico</h1>
+            <p style="font-weight: normal;padding-left: 20px; color: white;">
+                É baseado no exame físico e na coleta de informações consideradas indicativas da hanseníase. Para tanto,
+                além de uma boa
+                experiência clínica na área de saúde pública, é fundamental que o profissional colha informações sobre a
+                presença de
+                sinais e sintomas característicos da doença e sua história epidemiológica, ou seja, sobre a sua fonte de
+                infecção. O
+                exame físico é bem detalhado, para que se possam avaliar as características das lesões, o
+                comprometimento neurológico e
+                as possíveis incapacitações.
+            </p>
+        </div>
+
+        <div id="janela_2"
+            style="position: relative; width: 578px; height: 190px; background-color: rgba(0, 77, 115, 0.9); border-radius: 10px; flex-wrap: nowrap; margin-left: 176px; margin-top: -185px; cursor: pointer; display: none;">
+            <h1 style="padding: 10px 0px 0px 20px; color: #fac900;">Diagnóstico laboratorial</h1>
+            <p style="font-weight: normal;padding-left: 20px; color: white;">
+                A baciloscopia é o exame microscópico no qual se observa o M. leprae diretamente nos esfregaços de
+                raspados das lesões
+                hansênicas ou de outros locais de coleta selecionados: “ponta da orelha” e/ou cotovelos e lesão, quando
+                houver.
+                Semelhantemente à baciloscopia feita para pacientes com tuberculose, o exame auxilia na confirmação do
+                diagnóstico e na
+                avaliação da efetividade do tratamento e cura da doença.
+
+            </p>
+        </div>
+        <div id="janela_3"
+            style="position: relative; width: 578px; height: 190px; background-color: rgba(0, 77, 115, 0.9); border-radius: 10px; flex-wrap: nowrap; margin-left: 176px; margin-top: -185px; cursor: pointer; display: none;">
+            <h1 style="padding: 10px 0px 0px 20px; color: #fac900;">Diagnóstico diferencial
+            </h1>
+            <p style="font-weight: normal;padding-left: 20px; color: white;">
+                Como existem doenças que provocam lesões de pele semelhantes às lesões características da hanseníase e
+                doenças que
+                causam lesões neurológicas parecidas e que podem ser confundidas com as da hanseníase, o diagnóstico
+                diferencial é
+                sempre recomendado. Ele é realizado, muitas vezes, em unidades especializadas.
+
+            </p>
+        </div>
+
+
+    </div>
+</div>
+<footer style="height: 39.05px; width: 100%; background-color: #004c72;"><img
+        style="height: 22.65px; margin: 8.5px 37.05px;" src="recursos/imgs/SI_F1.png"><img
+        style="height: 22.75px; margin: 8.5px 37.05px; position: absolute; right: 0px;" src="recursos/imgs/SI_F2.png">
+</footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>
