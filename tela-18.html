@@ -15,7 +15,9 @@
             as<strong> paucibacilares</strong> (PB) e as<strong> multibacilares</strong>
             (MB).
         </p>
-        <p>As<strong> paucibacilares</strong> têm como característica principal apresentar até cinco lesões de pele e/ou
+
+        <p>As <strong style="background-color: #fac900; color: #004c72;"><a id="hotWord-bt">paucibacilares</a></strong>
+            têm como característica principal apresentar até cinco lesões de pele e/ou
             um
             tronco nervoso
             acometido. São consideradas formas que abrigam pequeno número de bacilos, insuficiente para gerar a
@@ -26,8 +28,25 @@
             que a doença evolua.</p>
     </div>
 </div>
+<div id="conteudo"
+    style="position: absolute; background-color: rgb(250, 201, 1); top: 180px; right: 290px; width: 357px; border-radius: 10px; display: none;">
+    <p style="text-align: center;">Paucibacilares: Classificação dada aos pacientes diagnosticados com hanseníase e que
+        apresentam até cinco lesões de pele
+        e/ou um tronco nervoso acometido.
+    </p>
 </div>
 <footer style="height: 39.05px; width: 100%; background-color: #004c72;">
     <img style="height: 29px;margin: 6.5px 37.05px;" src="recursos/imgs/SI_F1.png">
     <img style="height: 27px;margin: 8.5px 37.05px;position: absolute;right: 0px;" src="recursos/imgs/SI_F2.png">
 </footer>
+<script>
+    $(() => {
+        let conteudo = $('#conteudo').hide();
+        $('#hotWord-bt').hover(() => {
+            conteudo.fadeIn()
+        })
+        $('#hotWord-bt').mouseout(() => {
+            conteudo.fadeOut()
+        })
+    })
+</script>
