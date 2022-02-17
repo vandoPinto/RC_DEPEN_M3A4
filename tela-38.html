@@ -20,17 +20,35 @@
     <img style="height: 29px;margin: 6.5px 37.05px;" src="recursos/imgs/SI_F1.png">
     <img style="height: 27px;margin: 8.5px 37.05px;position: absolute;right: 0px;" src="recursos/imgs/SI_F2.png">
 </footer>
-
 <!-- Modal -->
-<div class="modal fade saiba-mais" id="modalCentro" tabindex="-1" role="dialog"
-    aria-labelledby="TituloModalCentralizado" aria-hidden="true" style="overflow-y:hidden;">
+<div class="modal fade" id="modalCentro" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+    aria-hidden="true" style="overflow-y:hidden;">
     <div class="modal-dialog modal-dialog-centered " role="document">
-        <div class="modal-content saiba-mais-modal" style="margin-top: 95px; width: 300px; height: 150px;">
-            <div data-dismiss="modal" class="close" aria-hidden="true">×</div>
-            <audio style="width: 87%; margin-top: 50px;" controls="controls">
-                <source src="recursos/audio/tela19.mp3" type="audio/mp3">
-            </audio>
+        <div class="modal-content" style="position: fixed; top: 72px; left: 0; width: 100%; height: 370px;">
+            <div data-dismiss="modal" class="close" aria-hidden="true" style="margin-left: auto; padding-right: 10px;">
+                ×</div>
+            <video id="full-video" width="100%" height="345px" controls="">
+                <source src="recursos/video/tela38.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 </div>
 <!-- Fim modal -->
+<footer style="height: 39.05px; width: 100%; background-color: #004c72;">
+    <img style="height: 29px;margin: 6.5px 37.05px;" src="recursos/imgs/SI_F1.png">
+    <img style="height: 27px;margin: 8.5px 37.05px;position: absolute;right: 0px;" src="recursos/imgs/SI_F2.png">
+</footer>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.close').click(function (event) {
+            $("#full-video").get(0).pause();
+            $("#full-video").get(0).currentTime = 0;
+            event.preventDefault();
+        });
+        $('.btn').click(function (event) {
+            $("#full-video").get(0).currentTime = 0;
+            $("#full-video").get(0).play();
+        });
+    });
+</script>
